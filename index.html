@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jquery-dropdown example</title>
+
+	<link rel="stylesheet" href="./jquery-dropdown.css">
+
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	<script type="text/javascript" src="./jquery-dropdown.js"></script>
+</head>
+
+<body>
+	<div id="dropdown"></div>
+	
+	<script type="text/javascript">
+		$("#dropdown").dropdown({
+			data : [
+                {
+                    id : 0,
+                    name : "Alaska"
+                },
+                {
+                    id : 1,
+                    name : "florida"
+                },
+                {
+                    id : 1,
+                    name : "New York"
+                },
+                {
+                    id : 1,
+                    name : "Ohio"
+                }
+            ],
+            placeholder : "Select State",
+            className : "state-dropdown",
+            headerWidth : 200,
+            headerHeight : 40,
+            openOnTop : true,
+            alignment : "left"
+		});
+	</script>
+</body>
+</html>
