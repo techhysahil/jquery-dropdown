@@ -4,6 +4,11 @@
     min-width: 200px;
     position: relative;
 }
+.dropdown-container.disable{
+    pointer-events: none;
+    cursor: not-allowed;
+    background: lightgray;
+}
 
 /*Header related*/
 .dropdown-container .header{
@@ -38,9 +43,27 @@
     top: calc(100% + 10px);
     min-width: 100%;
     border-radius: 2px;
+    max-height: 200px;
+    overflow: auto;
 }
 .dropdown-container.show .dropdown{
 	display: block;
+}
+.dropdown-container.show .dropdown .search{
+    width: 100%;
+}
+.dropdown-container.show .dropdown .search-input{
+    width: 100%;
+    box-sizing: border-box;
+    height: 40px;
+    font-size: 14px;
+    padding-left: 10px;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+}
+.dropdown-container.show .dropdown .search-input:focus{
+    outline : 0px;
 }
 .dropdown-container .dropdown .item{
 	padding: 10px;

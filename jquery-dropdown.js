@@ -8,8 +8,13 @@
             className : null,
             headerWidth : null,
             headerHeight : null,
-            openOnTop : false
+            openOnTop : false,
+            search : false,
+            disable : false,
+            searchPlaceholder : "Search items"
         }, options );
+
+    var dropdownData = JSON.parse(JSON.stringify(settings.data));
  
 
         function toggleDropdown(event){
@@ -24,6 +29,33 @@
             $(event.target).closest(".dropdown-container").addClass('show');      
         }
 
+        function reRenderdropdown(data,event){
+            var dropdownList = $(event.target).closest('.dropdown-container').find('.items-container');
+            dropdownList.empty();
+
+            if(data.length > 0){
+                $.each(data, function(index,obj){
+                    $('<div />', {
+                        "class": 'item',
+                        "data-id": index,
+                        text: obj.name,
+                        click: function(e){
+                            console.log("click item:"+obj.name);
+                            closeDropdown(e);
+                        }
+                    }).appendTo(dropdownList);    
+                });    
+            }else{
+                $('<div />', {
+                    "class": 'no-item',
+                    text: "No item found",
+                    click: function(e){
+                        closeDropdown(e);
+                    }
+                }).appendTo(dropdownList);  
+            }
+        }
+
         var conainerClass;
         if(settings.className){
             conainerClass = 'dropdown-container'+" "+settings.className;
@@ -31,9 +63,11 @@
             conainerClass = 'dropdown-container'   
         }
 
-        var wrapper = $('<div />', {
-                "class": conainerClass
-            });
+        if(settings.disable){
+            conainerClass = conainerClass+ " " + "disable"
+        }
+
+        var wrapper = this.addClass(conainerClass);
 
         var header = $('<div />', {
             "class": 'header',
@@ -51,16 +85,44 @@
             "class": 'dropdown'
         }).appendTo(wrapper);
 
-        if(settings.data.length > 0){
-            $.each(settings.data, function(index,obj){
+        if(settings.search){
+            var search = $('<div />', {
+                "class": 'search',
+            }).appendTo(dropdown);
+
+            var input = $('<input />', {
+                "class": 'search-input',
+                "name": 'search',
+                "placeholder": settings.searchPlaceholder,
+                keyup: function(event){
+                    var searchText = $(this).val();
+                    var newDropdownData =[];
+                    settings.data.forEach(function(item){
+                        if(item.name.toLowerCase().indexOf(searchText.toLowerCase()) >= 0){
+                            newDropdownData.push(item);
+                        }
+                    })
+                    reRenderdropdown(newDropdownData,event);
+                }
+            }).appendTo(search); 
+        }
+
+        if(dropdownData.length > 0){
+            var itemsContainer = $('<div />', {
+                "class": 'items-container'
+            }).appendTo(dropdown);
+
+
+            $.each(dropdownData, function(index,obj){
                 $('<div />', {
                     "class": 'item',
                     "data-id": index,
                     text: obj.name,
                     click: function(e){
+                        console.log("click item:"+obj.name);
                         closeDropdown(e);
                     }
-                }).appendTo(dropdown);    
+                }).appendTo(itemsContainer);    
             });    
         }else{
             $('<div />', {
@@ -71,6 +133,7 @@
                 }
             }).appendTo(dropdown);  
         }
+        
 
         // Close Dropdown when click outside
         $(document).on("click",function(event) {

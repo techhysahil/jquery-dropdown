@@ -8,14 +8,13 @@ Coming Features:
 -- badge
 -- Disable
 -- Should take array or array of object
--- disable dropdown
 -- Split dropdown
 -- prefix-icon
 -- Size : large,small,medium,extra small
 -- Allow adding custom content
 -- Open on mouse hover
 -- Multi level dropdown
--- Scrollable
+
 -- Search filter
 -- via HTML || Via Javascript 
 
@@ -28,5 +27,17 @@ Events:
 -- onshow
 -- onhide
 -- onselect
+
+
+-- Scss,Less and CSS style support.
+-- Minimum theme available : Bootstrap, Flat Design, Material design
+-- Get maximum variation demo created out of single jquery dropdown to show how much it ca be extensible. 
+-- Build parts as modular as possible.
+
+
+
+Already Added features:
+-- disable dropdown
+-- Scrollable
 
 
