@@ -14,11 +14,10 @@
             searchPlaceholder : "Search items",
 
             // Callbacks
-            onOptionClick : function( element, option ){},
-            onControlClose: function( element ){}
+            onOptionSelect : function(){},
         }, options );
 
-    var dropdownData = JSON.parse(JSON.stringify(settings.data));
+        var dropdownData = JSON.parse(JSON.stringify(settings.data));
  
 
         function toggleDropdown(event){
@@ -57,8 +56,10 @@
                         "data-id": index,
                         text: obj.name,
                         click: function(e){
-                            console.log("click item:"+obj.name);
                             closeDropdown(e);
+                            if(settings.onOptionSelect && typeof settings.onOptionSelect === "function"){
+                                settings.onOptionSelect(obj.name);
+                            }
                         }
                     }).appendTo(dropdownList);    
                 });    
@@ -136,8 +137,10 @@
                     "data-id": index,
                     text: obj.name,
                     click: function(e){
-                        console.log("click item:"+obj.name);
                         closeDropdown(e);
+                        if(settings.onOptionSelect && typeof settings.onOptionSelect === "function"){
+                            settings.onOptionSelect(obj.name);
+                        }
                     }
                 }).appendTo(itemsContainer);    
             });    
@@ -157,7 +160,8 @@
             var ele = $('.dropdown-container');
             if(!ele.find(event.target).length > 0 && $('.dropdown-container').hasClass("show")){
                 closeDropdown();
-            });
+            }
+        });
         
 
         

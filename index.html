@@ -56,7 +56,10 @@
             alignment : "left",
             searchPlaceholder : "Search list items...",
             search : true,
-            disable : false
+            disable : false,
+            onOptionSelect : function(item){
+                console.log(item);
+            }
 
 		});
 	</script>
