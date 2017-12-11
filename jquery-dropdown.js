@@ -11,7 +11,11 @@
             openOnTop : false,
             search : false,
             disable : false,
-            searchPlaceholder : "Search items"
+            searchPlaceholder : "Search items",
+
+            // Callbacks
+            onOptionClick : function( element, option ){},
+            onControlClose: function( element ){}
         }, options );
 
     var dropdownData = JSON.parse(JSON.stringify(settings.data));
@@ -19,18 +23,31 @@
 
         function toggleDropdown(event){
             $(event.target).closest(".dropdown-container").toggleClass('show');
+            if($(event.target).closest(".dropdown-container").hasClass('show')){
+                $(event.target).closest(".dropdown-container").find('.search-input').focus();
+            }else{
+                $(event.target).closest(".dropdown-container").find('.search-input').blur();
+            }
         }
 
         function closeDropdown(){
-            $(event.target).closest(".dropdown-container").removeClass('show');   
+            $('.dropdown-container .search-input').val("");
+            reRenderdropdown(settings.data);
+            $(".dropdown-container").removeClass('show');   
+            $(event.target).closest(".dropdown-container").find('.search-input').blur();
         }
 
         function openDropdown(){
             $(event.target).closest(".dropdown-container").addClass('show');      
+            $(event.target).closest(".dropdown-container").find('.search-input').focus();
         }
 
         function reRenderdropdown(data,event){
-            var dropdownList = $(event.target).closest('.dropdown-container').find('.items-container');
+            if(event){
+                var dropdownList = $(event.target).closest('.dropdown-container').find('.items-container');    
+            }else{
+                var dropdownList = $('.dropdown-container').find('.items-container');    
+            }
             dropdownList.empty();
 
             if(data.length > 0){
@@ -139,9 +156,8 @@
         $(document).on("click",function(event) {
             var ele = $('.dropdown-container');
             if(!ele.find(event.target).length > 0 && $('.dropdown-container').hasClass("show")){
-                $('.dropdown-container').removeClass('show');
-            }
-        });
+                closeDropdown();
+            });
         
 
         

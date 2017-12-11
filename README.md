@@ -6,7 +6,7 @@ Coming Features:
 -- Divider
 -- headers 
 -- badge
--- Disable
+-- Disable particular item
 -- Should take array or array of object
 -- Split dropdown
 -- prefix-icon
@@ -15,7 +15,7 @@ Coming Features:
 -- Open on mouse hover
 -- Multi level dropdown
 
--- Search filter
+
 -- via HTML || Via Javascript 
 
 Methods:
@@ -39,5 +39,6 @@ Events:
 Already Added features:
 -- disable dropdown
 -- Scrollable
+-- Search filter
 
 
