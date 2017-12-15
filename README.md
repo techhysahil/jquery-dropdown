@@ -27,25 +27,28 @@ After adding jquery-dropdown into your project, just add below code into your pr
 
 ```
 $("#dropdown").dropdown({
-			data : [
-                {
-                    id : 0,
-                    name : "Alaska"
-                },
-                {
-                    id : 1,
-                    name : "florida"
-                },
-                {
-                    id : 2,
-                    name : "New York"
-                },
-                {
-                    id : 3,
-                    name : "Ohio"
-                }
-            ]
-		});
+    data : [
+        {
+            id : 0,
+            name : "Alaska"
+        },
+        {
+            id : 1,
+            name : "florida"
+        },
+        {
+            id : 2,
+            name : "New York"
+        },
+        {
+            id : 3,
+            name : "Ohio"
+        }
+    ],
+    onOptionSelect : function(item){
+        console.log(item);
+    }
+});
 ```
 ## Options List
 
@@ -62,7 +65,7 @@ $("#dropdown").dropdown({
 
 | OPtion | Required/Optional | Description |
 | --- | --- | --- |
-| `id` | Required & Unique | Unique id for each category|
+| `id` | Required & Unique | Unique id for each list item |
 | `name` | Required | displayName of list item |
 
 ### Events
