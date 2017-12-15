@@ -1,7 +1,5 @@
 # jquery-dropdown
 
-# React MultiSelect
-
 jquery-dropdown is a simple  jquery dropdown component which can be integrated very easily and provide as much as option required. Any missing feature info will be appreciated.
 
 ## Demo
