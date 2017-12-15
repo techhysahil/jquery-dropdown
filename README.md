@@ -1,44 +1,82 @@
 # jquery-dropdown
 
+# React MultiSelect
 
-Coming Features:
+jquery-dropdown is a simple  jquery dropdown component which can be integrated very easily and provide as much as option required. Any missing feature info will be appreciated.
 
--- Divider
--- headers 
--- badge
--- Disable particular item
--- Should take array or array of object
--- Split dropdown
--- prefix-icon
--- Size : large,small,medium,extra small
--- Allow adding custom content
--- Open on mouse hover
--- Multi level dropdown
+## Demo
 
+Live Demo URL : Not hosted Yet
 
--- via HTML || Via Javascript 
+## Getting Started
 
-Methods:
--- toggle
--- close
--- open
+You have to add "jquery-dropdown.js" and "jquery-dropdown.css" into your project. You can either download it directly or get using npm.
 
-Events:
--- onshow
--- onhide
--- onselect
+```
+<link rel="stylesheet" href="./jquery-dropdown.css">
+<script type="text/javascript" src="./jquery-dropdown.js"></script>
+```
+
+Import Using NPM:
+```
+npm install jquery-dropdown --save
+```
 
 
--- Scss,Less and CSS style support.
--- Minimum theme available : Bootstrap, Flat Design, Material design
--- Get maximum variation demo created out of single jquery dropdown to show how much it ca be extensible. 
--- Build parts as modular as possible.
+### Usage
 
+After adding jquery-dropdown into your project, just add below code into your project.
 
+```
+$("#dropdown").dropdown({
+			data : [
+                {
+                    id : 0,
+                    name : "Alaska"
+                },
+                {
+                    id : 1,
+                    name : "florida"
+                },
+                {
+                    id : 2,
+                    name : "New York"
+                },
+                {
+                    id : 3,
+                    name : "Ohio"
+                }
+            ]
+		});
+```
+## Options List
 
-Already Added features:
--- disable dropdown
--- Scrollable
--- Search filter
+| OPtion | Required/Optional | Description |
+| --- | --- | --- |
+| `data` | Required | Data that needs to be render |
+| `placeholder` | Optional | Custom Placeholder for dropdown |
+| `searchPlaceholder` | Optional | Custom search Placeholder |
+| `className` | Optional | Custom classname to container |
+| `search` | Optional | Enable Search control, disabled by default |
+| `disable` | Optional | Disable dropdown |
 
+### data Object options
 
+| OPtion | Required/Optional | Description |
+| --- | --- | --- |
+| `id` | Required & Unique | Unique id for each category|
+| `name` | Required | displayName of list item |
+
+### Events
+
+| OPtion | Required/Optional | Description |
+| --- | --- | --- |
+| `onOptionSelect` | Required | Will be triggered on selecting option from dropdown list|
+
+## Authors
+
+***Sahil Gupta** [Github](https://github.com/techhysahil)
+
+## License
+
+This project is licensed under the Custom License - see the [LICENSE.md](LICENSE.md) file for details.
