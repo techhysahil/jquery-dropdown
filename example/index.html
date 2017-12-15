@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jquery-dropdown test</title>
+	<link rel="stylesheet" href="./../jquery-dropdown.css">
+	<style type="text/css">
+		body,html{
+			padding: 0px;
+			margin: 0px;
+		}
+		.page-title{
+			padding: 50px;
+		    font-size: 40px;
+		    background: #F6F6F6;
+		    color: #777;
+		}
+		.example-body{
+			padding: 30px 50px 60px 50px;
+		}
+		.example-body .heading {
+		    font-size: 30px;
+		    color: #666;
+		    clear: both;
+		    margin-top: 20px;
+		}
+		.example-body p {
+		    color: #666;
+		    margin-top: 10px;
+		    font-size: 16px;
+		}
+	</style>
+
+	<script src="./../jquery.js"></script>
+	<script type="text/javascript" src="./../jquery-dropdown.js"></script>
+	<script type="text/javascript">
+		$('document').ready(function(){
+			$("#simple-dropdown").dropdown({
+			    data : [
+			        {
+			            id : 0,
+			            name : "Alaska"
+			        },
+			        {
+			            id : 1,
+			            name : "florida"
+			        },
+			        {
+			            id : 2,
+			            name : "New York"
+			        },
+			        {
+			            id : 3,
+			            name : "Ohio"
+			        }
+			    ],
+			    onOptionSelect : function(item){
+			        console.log(item);
+			    }
+			});
+
+			$("#simple-dropdown-search").dropdown({
+			    data : [
+			        {
+			            id : 0,
+			            name : "Alaska"
+			        },
+			        {
+			            id : 1,
+			            name : "florida"
+			        },
+			        {
+			            id : 2,
+			            name : "New York"
+			        },
+			        {
+			            id : 3,
+			            name : "Ohio"
+			        }
+			    ],
+			    search : true,
+			    onOptionSelect : function(item){
+			        console.log(item);
+			    }
+			});
+
+			$("#simple-dropdown-disable").dropdown({
+			    data : [
+			        {
+			            id : 0,
+			            name : "Alaska"
+			        },
+			        {
+			            id : 1,
+			            name : "florida"
+			        },
+			        {
+			            id : 2,
+			            name : "New York"
+			        },
+			        {
+			            id : 3,
+			            name : "Ohio"
+			        }
+			    ],
+			    search : true,
+			    disable : true,
+			    onOptionSelect : function(item){
+			        console.log(item);
+			    }
+			});
+		})
+	</script>
+</head>
+<body>
+	<div class="page-title">jquery-dropdown</div>
+	<div class="example-body">
+		<div class="heading">Simple jquery-dropdown control.</div>
+		<p>A simple jquery-dropdown with data and onOptionSelect event.</p>
+		<div id="simple-dropdown"></div>
+
+		<div class="heading">Simple jquery-dropdown control with Search</div>
+		<p>A simple jquery-dropdown with search for searching list items.</p>
+		<div id="simple-dropdown-search"></div>
+
+		<div class="heading">Disabled jquery-dropdown control</div>
+		<p>jquery-dropdown in disable state</p>
+		<div id="simple-dropdown-disable"></div>
+
+		<div class="heading">Disabled jquery-dropdown control</div>
+		<p>jquery-dropdown in disable state</p>
+		<div id="simple-dropdown-disable"></div>
+	</div>
+	
+	<div id="dropdown-with-search"></div>
+</body>
+</html>
