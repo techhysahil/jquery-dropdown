@@ -6,6 +6,8 @@ jquery-dropdown is a simple  jquery dropdown component which can be integrated v
 
 Live Demo URL : Not hosted Yet
 
+![Alt Text](https://im2.ezgif.com/tmp/ezgif-2-7c787f527b.gif)
+
 ## Getting Started
 
 You have to add "jquery-dropdown.js" and "jquery-dropdown.css" into your project. You can either download it directly or get using npm.
