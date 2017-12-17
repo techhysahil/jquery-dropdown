@@ -6,7 +6,7 @@ jquery-dropdown is a simple  jquery dropdown component which can be integrated v
 
 Check example directory for examples.
 
-![Alt Text](https://drive.google.com/file/d/1YXVntS-JEPwjgWR9Mu01t6Gyqh5Cwb-V/view?usp=sharing)
+![Alt Text](https://raw.githubusercontent.com/techhysahil/jquery-dropdown/master/img/jquery-dropdown.gif)
 
 ## Getting Started
 
