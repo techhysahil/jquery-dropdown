@@ -78,9 +78,11 @@ $("#dropdown").dropdown({
 
 ### Events
 
-| OPtion | Description |
+| OPtion | Parameters | Description |
 | --- | --- | --- |
-| `onOptionSelect` | Will be triggered on selecting option from dropdown list|
+| `onOptionSelect`| 'selectedObj' | Will be triggered on selecting option from dropdown list|
+| `onOpen` | 'selectedObj, datasource' | Will be triggered when dropdown is open|
+| `onClose` | 'selectedObj, datasource' | Will be triggered when dropdown is closed|
 
 ## upcoming Featres
 1. Add multiple themes [Default, Bootstrap,Flat UI & Material].
