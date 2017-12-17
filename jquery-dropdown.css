@@ -94,6 +94,16 @@
     background: #48c9b0;
     border : 0px;
 }
+.dropdown-container.flat-ui.show .header:before{
+    content: "";
+    height: 0;
+    position: absolute;
+    top: calc(100% - 6px);
+    right: 15px;
+    width: 0;
+    border: 8px solid rgba(0,0,0,0);
+    border-bottom-color: #48c9b0;
+}
 .dropdown-container.flat-ui .header .selected-text{
     color: #fff;
 }

@@ -179,7 +179,7 @@
         $(document).on("click",function(event) {
             var ele = $('.dropdown-container');
             if(!ele.find(event.target).length > 0 && $('.dropdown-container').hasClass("show")){
-                closeDropdown();
+                closeDropdown(event);
             }
         });
         
