@@ -2,6 +2,11 @@
 
 jquery-dropdown is a simple  jquery dropdown component which can be integrated very easily and provide as much as option required. Any missing feature info will be appreciated.
 
+## Why
+1. The default HTML select element is hard to style.
+2. More programatic control.
+3. Full controls of event triggered.
+
 ## Demo
 
 Check example directory for examples.
@@ -57,6 +62,7 @@ $("#dropdown").dropdown({
 | OPtion | Required/Optional | Description |
 | --- | --- | --- |
 | `data` | Required | Data that needs to be render |
+| `selecteditem` | optional | default lected item. If not added, first item will be selected. |
 | `placeholder` | Optional | Custom Placeholder for dropdown |
 | `searchPlaceholder` | Optional | Custom search Placeholder |
 | `className` | Optional | Custom classname to container |
@@ -72,14 +78,14 @@ $("#dropdown").dropdown({
 
 ### Events
 
-| OPtion | Required/Optional | Description |
+| OPtion | Description |
 | --- | --- | --- |
-| `onOptionSelect` | Required | Will be triggered on selecting option from dropdown list|
+| `onOptionSelect` | Will be triggered on selecting option from dropdown list|
 
 ## upcoming Featres
 1. Add multiple themes [Default, Bootstrap,Flat UI & Material].
-2. Add onOpen, onClose & onToggle event.
-3. Adding different positioning option.
+2. Adding different positioning option.
+3. Add toggle and destroy.
 
 
 ## Authors

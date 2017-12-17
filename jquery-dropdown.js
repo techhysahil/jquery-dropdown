@@ -12,33 +12,47 @@
             search : false,
             disable : false,
             searchPlaceholder : "Search items",
+            selecteditem : null
 
             // Callbacks
             onOptionSelect : function(){},
+            onOpen : function(){},
+            onClose : function(){}
         }, options );
 
         var dropdownData = JSON.parse(JSON.stringify(settings.data));
+        if(!settings.selecteditem){
+            settings.selecteditem = dropdownData[0];
+        }
+        
  
 
         function toggleDropdown(event){
-            $(event.target).closest(".dropdown-container").toggleClass('show');
             if($(event.target).closest(".dropdown-container").hasClass('show')){
-                $(event.target).closest(".dropdown-container").find('.search-input').focus();
+                closeDropdown(event);
             }else{
-                $(event.target).closest(".dropdown-container").find('.search-input').blur();
+                openDropdown(event);
             }
         }
 
-        function closeDropdown(){
+        function closeDropdown(event){
             $('.dropdown-container .search-input').val("");
             reRenderdropdown(settings.data);
             $(".dropdown-container").removeClass('show');   
             $(event.target).closest(".dropdown-container").find('.search-input').blur();
+
+            if(settings.onClose && typeof settings.onClose === "function"){
+                settings.onClose(settings.selecteditem, settings.data);
+            }
         }
 
-        function openDropdown(){
+        function openDropdown(event){
             $(event.target).closest(".dropdown-container").addClass('show');      
             $(event.target).closest(".dropdown-container").find('.search-input').focus();
+
+            if(settings.onOpen && typeof settings.onOpen === "function"){
+                settings.onOpen(settings.selecteditem, settings.data);
+            }
         }
 
         function reRenderdropdown(data,event){
@@ -56,10 +70,11 @@
                         "data-id": index,
                         text: obj.name,
                         click: function(e){
-                            closeDropdown(e);
                             if(settings.onOptionSelect && typeof settings.onOptionSelect === "function"){
                                 settings.onOptionSelect(obj.name);
                             }
+                            settings.selecteditem = obj;
+                            closeDropdown(e);
                         }
                     }).appendTo(dropdownList);    
                 });    
