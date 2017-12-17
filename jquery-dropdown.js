@@ -12,7 +12,8 @@
             search : false,
             disable : false,
             searchPlaceholder : "Search items",
-            selecteditem : null
+            selecteditem : null,
+            theme : 'normal',
 
             // Callbacks
             onOptionSelect : function(){},
@@ -98,6 +99,10 @@
 
         if(settings.disable){
             conainerClass = conainerClass+ " " + "disable"
+        }
+
+        if(settings.theme === "flat"){
+            conainerClass = conainerClass+" "+"flat-ui"
         }
 
         var wrapper = this.addClass(conainerClass);

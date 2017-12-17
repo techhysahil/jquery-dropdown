@@ -68,6 +68,7 @@ $("#dropdown").dropdown({
 | `className` | Optional | Custom classname to container |
 | `search` | Optional | Enable Search control, disabled by default |
 | `disable` | Optional | Disable dropdown |
+| `theme` | Optional | flat or normal .Default it is 'normal' |
 
 ### data Object options
 
@@ -88,6 +89,10 @@ $("#dropdown").dropdown({
 1. Add multiple themes [Default, Bootstrap,Flat UI & Material].
 2. Adding different positioning option.
 3. Add toggle and destroy.
+4. Add kyword navigation.
+5. Update datasource and other options on the fly.
+6. add open, close, update, select item methods.
+7. custom header and item style and html.
 
 
 ## Authors
