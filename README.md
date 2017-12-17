@@ -6,7 +6,7 @@ jquery-dropdown is a simple  jquery dropdown component which can be integrated v
 
 Live Demo URL : Not hosted Yet
 
-![Alt Text](https://im2.ezgif.com/tmp/ezgif-2-7c787f527b.gif)
+![Alt Text](https://drive.google.com/file/d/1YXVntS-JEPwjgWR9Mu01t6Gyqh5Cwb-V/view?usp=sharing)
 
 ## Getting Started
 
@@ -75,6 +75,12 @@ $("#dropdown").dropdown({
 | OPtion | Required/Optional | Description |
 | --- | --- | --- |
 | `onOptionSelect` | Required | Will be triggered on selecting option from dropdown list|
+
+## upcoming Featres
+1. Add multiple themes [Default, Bootstrap,Flat UI & Material].
+2. Add onOpen, onClose & onToggle event.
+3. Adding different positioning option.
+
 
 ## Authors
 
