@@ -110,6 +110,15 @@
 .dropdown-container.flat-ui .header .selected-text:after{
     border-top-color: #fff;
 }
+.dropdown-container.flat-ui.show .dropdown .search-input{
+    background: #48c9b0;
+    border-bottom: 1px solid #ffffff6e;
+    color: #fff;
+}
+.dropdown-container .dropdown .no-item{
+    background: #48c9b0;
+    color: #fff;
+}
 .dropdown-container.flat-ui .dropdown{
     border : 0px;
 }
@@ -120,4 +129,17 @@
     background: #48c9b0;
     color: #fff;
     border-bottom: 1px solid #ecebeb73;
+}
+
+.dropdown-container.flat-ui .search-input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #fff;
+}
+.dropdown-container.flat-ui .search-input::-moz-placeholder { /* Firefox 19+ */
+  color: #fff;
+}
+.dropdown-container.flat-ui .search-input:-ms-input-placeholder { /* IE 10+ */
+  color: #fff;
+}
+.dropdown-container.flat-ui .search-input:-moz-placeholder { /* Firefox 18- */
+  color: #fff;
 }
