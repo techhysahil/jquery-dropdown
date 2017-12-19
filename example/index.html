@@ -111,6 +111,9 @@
 			    }
 			});
 		})
+		function trigger(){
+			$("#simple-dropdown").dropdown('open');
+		}
 	</script>
 </head>
 <body>
@@ -134,5 +137,6 @@
 	</div>
 	
 	<div id="dropdown-with-search"></div>
+	<div onclick="trigger()">Open first one</div>
 </body>
 </html>
